@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+defaults: 
+  run:
+    working-directory: src/Otus.Teaching.PromoCodeFactory.WebHost  
+
 jobs:
   build:
 
@@ -18,8 +22,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
-      working-directory: src/Otus.Teaching.PromoCodeFactory.WebHost
+      run: dotnet restore     
     - name: Build
       run: dotnet build --no-restore
     - name: Test
