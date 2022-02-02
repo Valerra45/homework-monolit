@@ -36,6 +36,8 @@ builder.Services.AddDbContext<PromoCodeContext>(x =>
 
 var app = builder.Build();
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 InitializeDb(app);
 
 app.UseSwagger();
