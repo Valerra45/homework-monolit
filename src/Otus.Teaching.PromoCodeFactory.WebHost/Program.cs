@@ -22,7 +22,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
 builder.Services.AddDbContext<PromoCodeContext>(x =>
 {
-    var host = "localhost";
+    var host = "host.docker.internal";
     var port = "5432";
 
     var username = "admin";
